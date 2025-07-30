@@ -1,15 +1,17 @@
 import socket
+# ====== || Server || ======
+HOST = '127.0.0.1'
+PORT = 6673
 
-# making of server
-
-# AF_INET = ipv4
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-s.bind((socket.gethostname(), 4434))
-s.listen(5)
-
-while True:
-    clintsocket, address = s.accept()
-    print(f"Address: {address}")
-    clintsocket.send(bytes("welcome to the rice field", "utf-8"))
-    clintsocket.close()
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sc:
+    sc.bind((HOST, PORT))
+    sc.listen()
+    conn, addr = sc.accept()
+    print(conn)
+    with conn:
+        print(f"connected to {addr}")
+        while True:
+            data = conn.recv(1024)
+            if not data:
+                break
+            conn.sendall(data)

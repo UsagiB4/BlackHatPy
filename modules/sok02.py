@@ -1,12 +1,12 @@
+# ====== || Cleint || ======
 import socket
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+HOST = "127.0.0.1"
+PORT = 6673
 
-s.connect((socket.gethostname(), 4434))
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sc:
+    sc.connect((HOST, PORT))
+    sc.sendall(b"Hi from the client. \n\r python: is cool")
+    data = sc.recv(1024)
 
-while True:
-    mesg = s.recv(32)
-    if len(mesg) <= 0:
-        break
-    else:
-        print(mesg.decode('utf-8'))
+print(f"Recieved data = {data!r}")
