@@ -18,3 +18,6 @@ I will keep notes while following the codes from the book and try to explain the
 ---
 ---
 
+>>> [Secondcode](code2.py)
+### Key-Points:
+- 
