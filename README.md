@@ -19,5 +19,8 @@ I will keep notes while following the codes from the book and try to explain the
 ---
 
 >>> [Secondcode](code2.py)
-### Key-Points:
+### Key-Points: (UDP Client)
+- `.SOCK_DGRAM`: socket type for **UDP**.
+- `.sendto(b"message", (host, port))`: Since *UDP* is connection less protocol, we can send data without connecting using `.connect()`.
+- `.recvfrom()`: is to receive data from *UDP*.
 - 

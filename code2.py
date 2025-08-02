@@ -7,7 +7,7 @@ client=socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 client.sendto(b"hello from client UDP", (target_host, target_port))
 
-data, addr = client.recvfrom(2024)
+data, addr = client.recvfrom(1024)
 
 print(data.decode())
 print(addr)
