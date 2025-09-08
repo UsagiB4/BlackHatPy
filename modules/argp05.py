@@ -21,4 +21,6 @@ parser = argparse.ArgumentParser(
 )
 
 parser.add_argument('--say', '-s', help='this will echo back what you give', type=str)
-parser.print_help()
+
+args = parser.parse_args()
+print(args.say)

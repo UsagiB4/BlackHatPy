@@ -9,7 +9,7 @@ parser.add_argument('--ourconst', action='store_const', const=32, help='we have 
 # storing true. we also can use 'sotre_false' to store 'false'
 parser.add_argument('--truth', action='store_true', help='True is here')
 # appends multiple values of a single argument
-parser.add_argument('--apnnum', action='append', type=int, help='takes multiple intiger value and stores them.')
+parser.add_argument('--apnnum', action='append', type=int, help='takes multiple intiger value and stores them.\n e.g: --apnnum 33 --apnnum 354 --apnnum 221')
 # this will count how many time the argument has been used
 parser.add_argument('--verbose', '-v', action='count', help='verbose mode. use multiple time to increase the result.')
 args = parser.parse_args()
